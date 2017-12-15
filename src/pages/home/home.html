@@ -1,14 +1,46 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<ion-header text-center>
+    <ion-navbar>
+        <button ion-button menuToggle icon-only >
+            <ion-icon name='menu'></ion-icon>
+        </button>
+        <ion-title >
+            Bitcoin High and Low
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding >
+    <div style="margin: 0;padding: 0;display: block;">
+        <canvas id='bitfinex'></canvas>
+    </div>
+
+    <ion-list>
+
+        <ion-item class="item-borderless">
+            <ion-range min="1" max="1000" [(ngModel)]="saturation" color="secondary">
+                <ion-label range-left>1</ion-label>
+                <ion-label range-right>1000</ion-label>
+            </ion-range>
+        </ion-item>
+        <ion-item text-center class="item-borderless">
+            {{saturation}}
+        </ion-item>
+
+
+    </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button color="secondary" (click)="clickHight()" full>High</button>
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button color="danger" full>Low</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-list>
+        <div ion-item >
+            test:test
+        </div>  
+    </ion-list>
 </ion-content>

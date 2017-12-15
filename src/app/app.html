@@ -1,1 +1,21 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+
+    <ion-content>
+        <ion-list>
+            <ion-item>
+                <button ion-button> 
+                    My Page
+                </button>
+            </ion-item>
+            <ion-item>
+                <button (click)="login()"  ion-button> 
+                   Login
+                </button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
