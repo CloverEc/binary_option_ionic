@@ -6,33 +6,40 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
+import { MyPage } from '../pages/my/my';
 import { HomePage } from '../pages/home/home';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-import {Chart} from 'chart.js'; 
+import {Chart} from 'chart.js';
+import { RestProvider } from '../providers/rest/rest'; 
+import { HttpClientModule } from '@angular/common/http';
 
-const config: SocketIoConfig = { url: 'api.bitfinex.com', options: {} }
+// const config: SocketIoConfig = { url: 'api.bitfinex.com', options: {} }
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
+    MyPage,
     HomePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    SocketIoModule.forRoot(config)
+    HttpClientModule
+   // SocketIoModule.forRoot(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     LoginPage,
+    MyPage,
     HomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider
   ]
 })
 export class AppModule {}

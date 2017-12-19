@@ -10,6 +10,9 @@
 </ion-header>
 
 <ion-content padding >
+    <div text-center>
+            <ion-icon name="stopwatch"></ion-icon>
+    </div>
     <div style="margin: 0;padding: 0;display: block;">
         <canvas id='bitfinex'></canvas>
     </div>
@@ -31,10 +34,10 @@
     <ion-grid>
         <ion-row>
             <ion-col col-6>
-                <button ion-button color="secondary" (click)="clickHight()" full>High</button>
+                <button ion-button color="secondary" [disabled]="isEnabled"  (click)="clickHight()" full>High</button>
             </ion-col>
             <ion-col col-6>
-                <button ion-button color="danger" full>Low</button>
+                <button ion-button color="danger"  [disabled]="!isEnabled" (click)="loginModal()" full>Low</button>
             </ion-col>
         </ion-row>
     </ion-grid>

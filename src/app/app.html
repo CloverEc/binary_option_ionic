@@ -1,16 +1,17 @@
 <ion-menu [content]="content">
 
     <ion-content>
+        <div style="margin-top:100px;">
+        </div>
         <ion-list>
-            <ion-item>
-                <button ion-button> 
-                    My Page
-                </button>
+            <ion-item  (click)="home()"  >
+                    Home Page
             </ion-item>
-            <ion-item>
-                <button (click)="login()"  ion-button> 
+            <ion-item  (click)="my()"  >
+                My Page
+            </ion-item>
+            <ion-item  (click)="login()"  > 
                    Login
-                </button>
             </ion-item>
         </ion-list>
     </ion-content>
